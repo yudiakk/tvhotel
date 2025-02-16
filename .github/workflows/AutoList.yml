@@ -2,8 +2,10 @@ name: AutoList
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 自动运行早上8点
-  workflow_dispatch:  # 允许手动触发
+    - cron: '0 21 * * *' # 自动运行时间
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -26,7 +28,7 @@ jobs:
       #- name: Run itv_all
         #run: python ${{ github.workspace }}/itv_all.py
 
-      - name: Run new
+      - name: Run cctv
         run: python ${{ github.workspace }}/new.py
         
       #- name: Run weishi
