@@ -2,7 +2,7 @@ name: AutoList
 
 on:
   schedule:
-    - cron: '0 21 * * *' # 自动运行时间
+    - cron: '0 21 * * *'
   push:
     branches:
       - main
